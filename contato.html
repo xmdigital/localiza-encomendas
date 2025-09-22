@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Localiza Encomendas</title>
+    <meta name="description" content="Entre em contato com a Localiza Encomendas para suporte e informações">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .contact-header h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .contact-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #5a6fd8;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .contact-info h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-info h3 i {
+            color: #667eea;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+        }
+        .contact-item i {
+            color: #667eea;
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+        .contact-item div {
+            flex: 1;
+        }
+        .contact-item strong {
+            display: block;
+            color: #333;
+            margin-bottom: 2px;
+        }
+        .contact-item span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .contact-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .contact-form h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-form h3 i {
+            color: #667eea;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto;
+        }
+        .submit-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        .company-details {
+            background: #e8f2ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .company-details h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .company-details p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        @media (min-width: 480px) {
+            .hours-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .hours-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .hours-item strong {
+            display: block;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .hours-item span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .alert i {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-page">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Voltar ao início
+            </a>
+            
+            <div class="contact-header">
+                <h1>Entre em Contato</h1>
+                <p>Estamos aqui para ajudar com suas dúvidas sobre rastreamento de encomendas</p>
+            </div>
+
+            <div class="alert">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <strong>Importante:</strong> Para rastreamento de encomendas, utilize nosso formulário na página inicial. Este canal é para suporte, dúvidas e questões relacionadas ao nosso serviço.
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>
+                        <i class="fas fa-address-book"></i>
+                        Informações de Contato
+                    </h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            <span>contato@localiza-encomendas.com.br</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Telefone</strong>
+                            <span>(11) 3000-0000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <span>(11) 99999-9999</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Endereço</strong>
+                            <span>São Paulo, SP - Brasil</span>
+                        </div>
+                    </div>
+
+                    <div class="hours-grid">
+                        <div class="hours-item">
+                            <strong>Segunda a Sexta</strong>
+                            <span>08:00 às 18:00</span>
+                        </div>
+                        <div class="hours-item">
+                            <strong>Sábados</strong>
+                            <span>09:00 às 14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>
+                        <i class="fas fa-paper-plane"></i>
+                        Envie sua Mensagem
+                    </h3>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Assunto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="suporte">Suporte Técnico</option>
+                                <option value="duvidas">Dúvidas Gerais</option>
+                                <option value="privacidade">Proteção de Dados</option>
+                                <option value="parceria">Parcerias</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem *</label>
+                            <textarea id="message" name="message" placeholder="Descreva sua dúvida ou solicitação..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="company-details">
+                <h3>Dados da Empresa</h3>
+                <p><strong>Localiza Encomendas Ltda.</strong></p>
+                <p>CNPJ: 12.345.678/0001-90</p>
+                <p>Inscrição Estadual: 123.456.789.123</p>
+                <p>Razão Social: Localiza Encomendas Ltda.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <p><strong>Localiza Encomendas Ltda.</strong></p>
+                <p>CNPJ: 12.345.678/0001-90</p>
+            </div>
+            <div class="footer-links">
+                <a href="termos.html">Termos de Uso</a>
+                <a href="politicas.html">Política de Privacidade</a>
+                <a href="cookies.html">Política de Cookies</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Localiza Encomendas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simula envio do formulário
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Mensagem enviada com sucesso! Retornaremos em breve.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Validação em tempo real
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.style.borderColor === 'rgb(220, 53, 69)' && this.value.trim()) {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

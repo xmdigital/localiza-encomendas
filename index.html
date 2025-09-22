@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17551877128"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17551877128');
+</script>
+<!-- Event snippet for Visualização de página conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17551877128/SGNQCPiU3Z8bEIjIsbFB',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento de Encomendas - Localiza Encomendas</title>
+    <meta name="description" content="Sistema de rastreamento de encomendas nacionais e internacionais">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Localiza Encomendas">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-shipping-fast"></i>
+                <h1>Localiza Encomendas</h1>
+            </div>
+            <p class="subtitle">Rastreamento rápido e seguro</p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>Tipo</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>Idade</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>Documentos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <!-- Step 1: Nacional ou Internacional -->
+            <div class="step-content active" id="step1">
+                <div class="step-header">
+                    <i class="fas fa-globe-americas"></i>
+                    <h2>Sua encomenda é nacional ou internacional?</h2>
+                    <p>Selecione o tipo de envio para continuar</p>
+                </div>
+                <div class="options">
+                    <button class="option-btn" data-value="nacional">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nacional</span>
+                        <small>Envios dentro do Brasil</small>
+                    </button>
+                    <button class="option-btn" data-value="internacional">
+                        <i class="fas fa-plane"></i>
+                        <span>Internacional</span>
+                        <small>Envios do exterior</small>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Maior de idade -->
+            <div class="step-content" id="step2">
+                <div class="step-header">
+                    <i class="fas fa-user-check"></i>
+                    <h2>Você é maior de idade?</h2>
+                    <p>Confirme sua idade para prosseguir</p>
+                </div>
+                <div class="options">
+                    <button class="option-btn" data-value="sim">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Sim</span>
+                        <small>Tenho 18 anos ou mais</small>
+                    </button>
+                    <button class="option-btn" data-value="nao">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Não</span>
+                        <small>Menor de 18 anos</small>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Documentos -->
+            <div class="step-content" id="step3">
+                <div class="step-header">
+                    <i class="fas fa-id-card"></i>
+                    <h2>Está com documentos em mãos?</h2>
+                    <p>Tenha seus documentos prontos para o rastreamento</p>
+                </div>
+                <div class="options">
+                    <button class="option-btn" data-value="sim">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Sim</span>
+                        <small>Documentos disponíveis</small>
+                    </button>
+                    <button class="option-btn" data-value="nao">
+                        <i class="fas fa-clipboard"></i>
+                        <span>Não</span>
+                        <small>Buscar documentos depois</small>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Step -->
+            <div class="step-content" id="loading">
+                <div class="loading-container">
+                    <div class="spinner"></div>
+                    <h2>Processando informações...</h2>
+                    <p>Redirecionando para o sistema de rastreamento</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <button class="nav-btn back-btn" id="backBtn" style="display: none;">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </button>
+            <button class="nav-btn next-btn" id="nextBtn" style="display: none;">
+                Continuar
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <p><strong>Localiza Encomendas Ltda.</strong></p>
+                <p>CNPJ: 12.345.678/0001-90</p>
+            </div>
+            <div class="footer-links">
+                <a href="termos.html">Termos de Uso</a>
+                <a href="politicas.html">Política de Privacidade</a>
+                <a href="cookies.html">Política de Cookies</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Localiza Encomendas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
